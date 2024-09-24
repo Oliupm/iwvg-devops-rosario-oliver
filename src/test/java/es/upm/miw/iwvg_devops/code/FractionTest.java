@@ -31,6 +31,9 @@ class FractionTest {
     }
 
     @Test
+    void testDecimal() { assertEquals(0.75, this.fraction.decimal()); }
+
+    @Test
     void testSetNumerator() {
         int newNumerator = 7;
         fraction.setNumerator(newNumerator);
