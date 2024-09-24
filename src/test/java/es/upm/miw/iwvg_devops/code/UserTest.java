@@ -70,6 +70,7 @@ class UserTest {
     @Test
     void testAddFractions() {
         this.user.addFraction(new Fraction(1,8));
+        this.user.addFraction(new Fraction(5,3));
         assertEquals(4, this.user.getFractions().size());
     }
 }
