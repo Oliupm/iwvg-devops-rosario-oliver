@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FractionTest {
     private Fraction fraction;
@@ -44,10 +45,44 @@ class FractionTest {
     }
 
     @Test
-    void testDecimal() {
-        assertEquals(0.75, fraction.decimal(), 10e-5);
+    void testIsProper() { assertTrue(new Fraction(3,5).isProper()); }
+
+    @Test
+    void testIsImproper() { assertTrue(new Fraction(8,4).isImproper()); }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction equivalent = new Fraction(12,16);
+        assertTrue(this.fraction.isEquivalent(equivalent));
     }
 
+    @Test
+    void testAdd() {
+        Fraction addedFraction = new Fraction(7,4);
+        Fraction comparator = new Fraction(40,16);
+        Fraction solution = this.fraction.add(addedFraction);
+        assertEquals(solution.getNumerator(), comparator.getNumerator());
+        assertEquals(solution.getDenominator(), comparator.getDenominator());
+    }
 
+    @Test
+    void testMultiply() {
+        Fraction multiplier = new Fraction(3,5);
+        Fraction comparator = new Fraction(9,20);
+        Fraction solution = this.fraction.multiply(multiplier);
+
+        assertEquals(solution.getNumerator(), comparator.getNumerator());
+        assertEquals(solution.getDenominator(), comparator.getDenominator());
+    }
+
+    @Test
+    void testDivide() {
+        Fraction divisor = new Fraction(3,5);
+        Fraction comparator = new Fraction(15,12);
+        Fraction solution = this.fraction.divide(divisor);
+
+        assertEquals(solution.getNumerator(), comparator.getNumerator());
+        assertEquals(solution.getDenominator(), comparator.getDenominator());
+    }
 
 }
