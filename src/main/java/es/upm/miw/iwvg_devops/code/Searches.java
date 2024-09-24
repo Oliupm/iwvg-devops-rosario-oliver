@@ -19,7 +19,10 @@ public class Searches {
     }
 
     public Stream<String> findUserIdByAnyProperFraction() {
-        return Stream.empty();
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(Fraction::isProper))
+                .map(User::getId);
     }
 
     public Stream<String> findUserNameByAnyImproperFraction() {
