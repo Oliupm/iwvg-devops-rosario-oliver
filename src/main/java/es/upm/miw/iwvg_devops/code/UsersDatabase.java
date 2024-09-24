@@ -7,6 +7,7 @@ public class UsersDatabase {
 
     public Stream<User> findAll() {
 
+
         List<Fraction> fractions1 = List.of(
                 new Fraction(0, 1),
                 new Fraction(1, 1),
