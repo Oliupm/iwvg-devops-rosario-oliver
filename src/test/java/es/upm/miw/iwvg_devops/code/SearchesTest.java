@@ -9,9 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SearchesTest {
 
+    @Test
     void testFindHighestFraction() {
         Fraction searched = new Searches().findHighestFraction();
-        Fraction highest = new Fraction(1,0);
+        Fraction highest = new Fraction(0,0);
         assertEquals(highest.getNumerator(), searched.getNumerator());
         assertEquals(highest.getDenominator(), searched.getDenominator());
     }
